@@ -21,6 +21,10 @@ Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
+Plug 'pangloss/vim-javascript'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'zxqfl/tabnine-vim'
+Plug 'vim-python/python-syntax'
 call plug#end()
 
 " MAPEO DE TECLAS
@@ -28,7 +32,8 @@ call plug#end()
 let mapleader=" "
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
-
+:imap ,, <Esc>
+nmap <buffer> <F5> :w !python3
 " Easymotion
 nmap <Leader>s <Plug>(easymotion-s2)
 
@@ -36,6 +41,13 @@ nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>nt :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen=1
 
+"Coc
+let g:coc_global_extensions = [ 'coc-tsserver' ]
+noremap <leader>gs :CocSearch
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " THIS IS COLOR AND TEXT CONFIGURATION!!
 set background=dark
