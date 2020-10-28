@@ -10,6 +10,7 @@ set showmatch
 set sw=2
 set relativenumber
 set laststatus=2
+set tabstop=4
 
 "Aquí es donde se instalan los plugins y temas
 call plug#begin('~/.vim/plugged')
@@ -24,7 +25,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-python/python-syntax'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-python' "dospuntos CocInstall coc-python // Actualizar pip3
 Plug 'zxqfl/tabnine-vim'
+Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 " MAPEO DE TECLAS
@@ -48,6 +52,7 @@ let g:python_highlight_all = 1
 let g:javascript_plugin_jsdoc = 1
 
 "Coc
+let g:coc_global_extensions = [ 'coc-tsserver' ]
 noremap <leader>gs :CocSearch
 
 
