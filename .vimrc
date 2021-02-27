@@ -25,10 +25,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-python/python-syntax'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-python' "dospuntos CocInstall coc-python // Actualizar pip3
-Plug 'zxqfl/tabnine-vim'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim',
 call plug#end()
 
 " MAPEO DE TECLAS
@@ -37,7 +39,6 @@ let mapleader=" "
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 :imap ,, <Esc>
-nmap <buffer> <F5> :w !python3
 " Easymotion
 nmap <Leader>s <Plug>(easymotion-s2)
 
@@ -45,16 +46,9 @@ nmap <Leader>s <Plug>(easymotion-s2)
 nmap <Leader>nt :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen=1
 
-"Python-Syntax
-let g:python_highlight_all = 1
-
-"JavaScript-Syntax
-let g:javascript_plugin_jsdoc = 1
-
-"Coc
-let g:coc_global_extensions = [ 'coc-tsserver' ]
 noremap <leader>gs :CocSearch
-
+nmap <leader>fs :FZF<CR>
+nmap <leader>rg :Rg<CR>
 
 " THIS IS COLOR AND TEXT CONFIGURATION!!
 set background=dark
@@ -76,3 +70,4 @@ let g:palenight_terminal_italics=1
 let g:palenight_color_overrides = {
 \    'black': { 'gui': '#000000', "cterm": "0", "cterm16": "0" },
 \}
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.jsx, *.js'
